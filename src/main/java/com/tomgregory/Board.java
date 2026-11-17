@@ -22,7 +22,7 @@ public class Board {
     }
 
     public boolean isSunk() {
-        return hitCount > BATTLESHIP_LENGTH;
+        return hitCount >= BATTLESHIP_LENGTH;
     }
 
     public void reveal() {
@@ -49,15 +49,15 @@ public class Board {
         Point startPoint = randomGridPoint();
         Point endPoint = calculateEndPoint(startPoint);
 
-        for (int x = startPoint.x; x < endPoint.x + 1; x++) {
-            for (int y = startPoint.y; y < endPoint.y + 1; y++) {
+        for (int x = startPoint.x; x <= endPoint.x && x < grid.length; x++) {
+            for (int y = startPoint.y; y <= endPoint.y && y<grid[x].length; y++) {
                 grid[x][y] = true;
             }
         }
     }
 
     private Point randomGridPoint() {
-        return new Point(getRandomInteger(grid.length - 1), getRandomInteger(grid.length - 1));
+        return new Point(getRandomInteger(grid.length - BATTLESHIP_LENGTH), getRandomInteger(grid.length - BATTLESHIP_LENGTH));
     }
 
     private Point calculateEndPoint(Point startPoint) {
@@ -77,6 +77,6 @@ public class Board {
     }
 
     private static int getRandomInteger(int maxValue) {
-        return new Random().nextInt(maxValue);
+        return new Random().nextInt(maxValue+1);
     }
 }

@@ -1,0 +1,11 @@
+
+I used IntelliJ to find and fix the errors in the Battleship game.
+
+I used breakpoints to stop the program at some lines.
+I used Step Into (F7) to go inside the methods.
+I used Step Over (F8) to run the code step by step.
+I checked the variables to see their values.
+I checked the array to find why the error happened.
+I changed some parts of the code to fix the errors.
+I fixed the problem with the ship sunk condition.
+I ran the program again to check if it worked.
